@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title  %}{{user.title}}{% endblock  %}
+{% block body %}
+
+<section class="blog">
+  <div class="container">
+      <header class="hd">
+        <img src="{{ url_for('static',filename='img/'+ user.img|safe) }}" class="hd-img">
+        <h4 class="title">{{user.title}}</h4>
+      </header>
+      <section class="py-5 lh-l">
+        <div class="row">
+          <div class="col-12 col-md-8">
+          <div class="row">
+            <div class="col">
+              <h3 class="h2 title pb-2">{{user.title}}</h3>
+              <h4 class="title">{{user.img}}</h4>
+
+              <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="pb-3">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="#">{{user.tag}}</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">{{user.title}}</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="col text-end">
+              <div class="tags pb-3">
+                </a><a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary primary-btn text-uppercase">
+                  {{user.tag}}
+                </a>
+              </div>
+              <p>Posted <a href="#">{{ author }}</a> <span>{{ user.date }}</span></p>
+              
+            </div>
+            <article class="blog-article">
+              {{user.content|safe}}
+            </article>
+          </div>
+          </div>
+          <aside class="col-12 col-md-4">
+          <form class="mt-5" >
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search Here..." aria-label="Username" aria-describedby="basic-addon1" >
+              </div>
+          </form>
+          <div class="recent mt-5">
+              <h5 class="fw-bold text-uppercase">recent post</h5>
+              <div class="recent-post my-5">
+                <a class="text-decoration-none primary fw-bold fs-5" href="#">
+                Vestibulum id turpis porttitor sapien facilisis scelerisque
+                </a>
+                <p class="text-muted mt-1">
+                May 31, 2045
+                </p>
+              </div>
+              <div class="recent-post">
+                <a class="text-decoration-none primary fw-bold fs-5" href="#">
+                Suspendisse et metus nec libero ultrices varius eget in risus
+                </a>
+                <p class="text-muted mt-1">
+                May 28, 2045
+                </p>
+              </div>
+
+              <div class="recent-post">
+                <a class="text-decoration-none primary fw-bold fs-5" href="#">
+                    Swag hella echo park leggings, shaman cornhole ethical coloring
+                </a>
+                <p class="text-muted mt-1">
+                    May 14, 2045
+                </p>
+              </div>
+
+
+
+              
+          </div>
+          <div class="categories mt-5">
+              <h5 class="fw-bold text-uppercase">categories</h5>
+              <ul class="list-catigory">
+                <li  class="pt-3">
+                    <a href="#" class="text-decoration-none  text-muted">
+                      Nature Lifestyle
+                    </a>
+                </li>
+                <li class="pt-3">
+                    <a href="#" class="text-decoration-none text-muted ">
+                      Awesome Layouts
+                    </a>
+                </li>
+                <li class="pt-3">
+                    <a href="#" class="text-decoration-none text-muted ">
+                      Creative Ideas
+                    </a>
+                </li>
+              </ul>
+          </div>
+          <div class="tags mt-5">
+              <a href="#" class="m-1 btn primary-btn btn-primary">
+                Lifestyle
+              </a> 
+              <a href="#" class="m-1 btn primary-btn btn-primary">
+                Creative HTML5
+              </a> 
+              <a href="#" class="m-1 btn primary-btn btn-primary">
+                Inspiration
+              </a> 
+              <a href="#" class="m-1 btn primary-btn btn-primary">
+                Motivation
+              </a> 
+              <a href="#" class="m-1 btn primary-btn btn-primary">
+                PSD
+              </a> 
+              <a href="#" class="m-1 btn primary-btn btn-primary">
+                Responsive
+              </a> 
+              
+
+          </div>
+        </aside>
+        </div>
+        
+      </section>
+</section>
+
+{% endblock %}

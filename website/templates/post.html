@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title  %}Create Blog{% endblock  %}
+{% block body %}
+
+{% if user.is_authenticated %}
+
+<img src="{{ url_for('static',filename='img/{{data}}') }}">
+
+<div class="container border border-3">
+   <h1 class="pt-5">Create Blog </h1>
+   <div class='text-end'>
+      <a href="/" class="text-uppercase btn btn-primary primary-btn "> {{ user.user_name }} </a>
+   <a class="btn btn-primary " href="./logout">Logout</a> 
+   </div>
+
+   <form method="POST" enctype='multipart/form-data' >
+      <div class="mb-3 ">
+         <label for="titleBlog" class="form-label">Title </label>
+         <input type="text" class="form-control form-control-lg" id="titleBlog" placeholder="Title" name="titleBlog">
+
+       </div>
+      <div class="mb-3 ">
+         <label for="titleBlog" class="form-label">Tags </label>
+         <input type="text" class="form-control form-control-lg" id="titleBlog" placeholder="Tags" name="tags">
+       </div>
+    
+       <div class="mb-3 ">
+         <label for="thumb" class="form-label">Thumbnial </label>
+         <input type="file" class="form-control form-control-lg" id="thumb" placeholder="thump" name="thumb" accept="image/*">
+       </div>
+       <div class="mb-3 pb-3">
+         <label for="conentBlog" class="form-label">Content</label>
+         <textarea class="form-control" id="conentBlog" rows="30" name="content"></textarea>
+       </div>
+       <div class="d-grid py-5">
+          <button class="btn primary-btn btn-primary" type="submit">
+             Add Post
+          </button>
+       </div>
+    </form>
+</div>
+
+</main>
+
+
+
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+
+
+
+{% endif %}
+
+
+{% endblock %}

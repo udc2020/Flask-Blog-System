@@ -233,7 +233,11 @@ body, main {
 .footer {
    background-color: var(--primary);
    padding: 3em !important;
-   margin-bottom: 0 !important;
+   position:relative;
+   left: 0;
+   right: 0;
+   bottom: -10px;
+
 }
 
 .footer>*, .footer a,.footer a:hover {

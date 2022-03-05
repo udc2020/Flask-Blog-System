@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title  %}Login{% endblock  %}
+{% block body %}
+
+<section class="container mt-4">
+   <h2 class="text-center fs-1">Login</h2>
+   <form method="POST" >
+      <div class="mb-3 ">
+         <label for="exampleFormControlInput1" class="form-label">Username </label>
+         <input type="text" class="form-control form-control-lg" id="user" placeholder="UserName" name="user" required minlength="4" >
+       </div>
+     
+      <div class="mb-3 ">
+        <label for="exampleFormControlInput1" class="form-label">Password </label>
+        <input type="password" class="form-control form-control-lg" id="password" placeholder="Your Password" name="password"  required minlength="4" >
+      </div>
+      <div class="d-grid">
+         <button type="submit" class="btn btn-primary primary-btn btn-lg"   id="login">Login</button>
+       </div>
+       {% if error %}
+         <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+               Invalide User Or Passowrd !
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+       {% endif %}
+    </form>
+</section>
+
+
+{% endblock %}

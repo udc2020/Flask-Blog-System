@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   <link rel="stylesheet" href="{{ url_for('static' ,filename='css/bootstrap.min.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static' ,filename='css/style.css') }}">
+   <title>  Blogish | {% block title %}{% endblock  %} </title>
+</head>
+
+<body>
+   <main>
+      {% if navbar %}
+      <!-- N A V B A R -->
+      <nav class="navbar navbar-light  navbar-expand-md">
+         <div class="container-md">
+            <a href="/" class="navbar-brand text-uppercase fw-bold ">
+               Blogish <span class="fs-3 dot">.</span>
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+               aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
+               <ul class="navbar-nav me-0">
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="/">home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/blogPost.html">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/about">about</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/contact">contact</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                     <a  href="/login" class=" btn btn-primary primary-btn text-uppercase ">login</a>
+                  </li>
+                  <li class="nav-item">
+                     <a  href="/signin" class=" btn btn-outline-secondary  text-uppercase  ">Sign Up</a>
+                  </li>
+               </ul>
+            </div>
+
+
+         </div>
+
+      </nav>
+      <!-- N A V B A R -->
+      {% endif  %}
+
+      {% block body %}{% endblock %}
+
+      <!-- F O O T E R  -->
+      <footer class="footer py-3 mt-5">
+         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link px-2 text-muted">About US</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link px-2 text-muted">contact</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">blogs</a></li>
+            <li class="nav-item"><a href="/login" id="admin" class="nav-link px-2 text-muted" >Login</a></li>
+         </ul>
+         <p class="text-center text-muted">© <script>
+               document.write(new Date().getFullYear())
+            </script> Ultrasdzcoder, Inc</p>
+      </footer>
+      <!-- F O O T E R  -->
+   </main>
+
+   
+   
+   
+
+   <script src="{{ url_for('static' ,filename='js/popper.min.js') }}"></script>
+
+   <script src="{{ url_for('static' ,filename='js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{ url_for('static' ,filename='js/index.js') }}"></script>
+</body>
+
+</html>
