@@ -63,12 +63,12 @@ def post_Page():
 
 
 # Craete Post link & Vue
-@views.route('blog/<int:id>/<string:title>')
-def blogs(id,title):
+@views.route('/blog/<int:id>/<int:user_id>/<string:title>')
+def blogs(id,user_id,title):
    # get Post
-   post = Post.query.filter_by(user_id=id).first()
+   post = Post.query.filter_by(id=id).first()
    # get Author 
-   author = User.query.filter_by(id=id).first()
+   author = User.query.filter_by(id=user_id).first()
    return render_template("blogPost.html",navbar=True,user=post,author=author.user_name) 
 
 
