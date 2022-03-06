@@ -70,7 +70,7 @@
                         <p class="snipast mt-4 text-muted" >
                            {{ (blog.content|safe)[:300] }}
                         </p>
-                        <a href="./blog/{{blog.id}}/{{blog.title}}" class="btn btn-primary primary-btn mt-2">Read More...</a>
+                       <a href="./blog/{{ post.id }}/{{ post.user_id }}/{{ post.title }}" class="btn btn-primary primary-btn mt-2">Read More...</a>
                      </div>
                   </article>
 
